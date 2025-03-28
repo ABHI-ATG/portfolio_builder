@@ -1,0 +1,86 @@
+{
+    "logo_name":"JD",
+    "name": "John Doe",
+    "about":"I am a seasoned full-stack software engineer with over 8 years of professional experience, specializing in backend development. My expertise lies in crafting robust and scalable SaaS-based architectures on the Amazon AWS platform.",
+    "resume":"",
+    "project": [
+        {
+            "name":"Project 1",
+            "data":"",
+            "description":"This is the description of the project. This project is about building a website for a client. The website is built using React and Node.js. The website is hosted on AWS.",
+            "image":"https://efc.web.unc.edu/wp-content/uploads/sites/2607/2016/05/project-management-copy.png"
+        },
+        {
+            "name":"Project 1",
+            "data":"",
+            "description":"This is the description of the project. This project is about building a website for a client. The website is built using React and Node.js. The website is hosted on AWS.",
+            "image":"https://efc.web.unc.edu/wp-content/uploads/sites/2607/2016/05/project-management-copy.png"
+        },
+        {
+            "name":"Project 1",
+            "data":"",
+            "description":"This is the description of the project. This project is about building a website for a client. The website is built using React and Node.js. The website is hosted on AWS.",
+            "image":"https://efc.web.unc.edu/wp-content/uploads/sites/2607/2016/05/project-management-copy.png"
+        }
+    ],
+    "experience":[
+        {
+            "title":"Software Engineer",
+            "company":"ABC Company",
+            "date":"Jan 2018 - Present",
+            "description":"I am a seasoned full-stack software engineer with over 8 years of professional experience, specializing in backend development. My expertise lies in crafting robust and scalable SaaS-based architectures on the Amazon AWS platform.",
+            "logo":"https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png"
+        },
+        {
+            "title":"Software Engineer",
+            "company":"ABC Company",
+            "date":"Jan 2018 - Present",
+            "description":"I am a seasoned full-stack software engineer with over 8 years of professional experience, specializing in backend development. My expertise lies in crafting robust and scalable SaaS-based architectures on the Amazon AWS platform.",
+            "logo":"https://logosmarcas.net/wp-content/uploads/2020/04/Apple-Logo.png"
+        },
+        {
+            "title":"Software Engineer",
+            "company":"ABC Company",
+            "date":"Jan 2018 - Present",
+            "description":"I am a seasoned full-stack software engineer with over 8 years of professional experience, specializing in backend development. My expertise lies in crafting robust and scalable SaaS-based architectures on the Amazon AWS platform.",
+            "logo":"https://logosmarcas.net/wp-content/uploads/2020/04/Apple-Logo.png"
+        }
+    ],
+    "techstack":[
+        {
+            "name":"React",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+        },
+        {
+            "name":"Node.js",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png"
+        },
+        {
+            "name":"AWS",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png"
+        }
+    ],
+    "social":[
+        {
+            "name":"email",
+            "url":"",
+            "link":"https://static.vecteezy.com/system/resources/previews/016/716/465/non_2x/gmail-icon-free-png.png"
+        },
+        {
+            "name":"github",
+            "url":"",
+            "link":"https://cdn0.iconfinder.com/data/icons/shift-logotypes/32/Github-512.png"
+        },  
+        {
+            "name":"linkedin",
+            "url":"",
+            "link":"https://static.vecteezy.com/system/resources/previews/021/460/490/original/linkedin-logo-free-download-free-png.png"
+        },
+        {
+            "name":"instagram",
+            "url":"",
+            "link":"https://static.vecteezy.com/system/resources/previews/018/930/413/original/instagram-logo-instagram-icon-transparent-free-png.png"
+        }
+    ]
+}
+  

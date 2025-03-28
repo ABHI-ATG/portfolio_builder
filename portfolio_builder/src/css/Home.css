@@ -1,0 +1,57 @@
+.home {
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 50px 20px;
+}
+
+.avatar {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #bbb;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.primary {
+    background: white;
+    color: black;
+}
+
+.secondary {
+    background: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn a{
+    text-decoration: none;
+    color: black;
+}

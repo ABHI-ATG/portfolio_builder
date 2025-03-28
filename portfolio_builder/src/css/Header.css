@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Creates space between logo & nav */
+  align-items: center;
+  padding: 15px 80px;  /* Increased padding for better centering */
+  background: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  flex: 1;  /* Makes the nav take the available space */
+  display: flex;
+  justify-content: center; /* Centers the nav links */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff8a00;
+}
+
+/* Fix for Home section being hidden behind the header */
+.home {
+  padding-top: 100px; /* Push content below the fixed header */
+  text-align: center;
+}

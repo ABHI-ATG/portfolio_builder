@@ -1,0 +1,112 @@
+/* Dashboard.css */
+.dashboard {
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dashboard h2{
+    color:black;
+}
+
+.dashboard-form{
+    max-width: 700px;
+    color: #828ba2;
+}
+
+.dashboard-form label{
+    text-align: left;
+    font-weight: normal;
+    margin:10px 0px 0px 0px;
+}
+
+
+.dashboard-form input,
+.dashboard-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0px 10px 0px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgb(239 242 249);
+    color: #7586b5;
+}
+
+.dashboard-form input::placeholder,
+.dashboard-form textarea::placeholder {
+}
+
+.dashboard-form button {
+    border: none;
+    padding: 5px 0px;
+    margin: 5px 0px 15px 0px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: transparent;
+    color: rgb(0, 128, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    width: 150px;
+    transition: background 0.3s ease;
+    text-align: left;
+}
+
+.dashboard-form button:hover {
+    color: rgb(0, 68, 131);
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+}
+
+.form-row{
+    display: flex;
+    width: 100%;
+}
+
+.form-row :first-child{
+    margin-right:10px;
+}
+
+.dashboard .save{
+    border: none;
+    padding: 5px 0px;
+    margin: 5px 0px 15px 0px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 150px;
+    transition: background 0.3s ease;
+    background-color:#d32f2f;
+    color: white;
+    padding: 10px;
+    width: auto;
+}
+
+.dashboard .save:hover {
+    background-color: #b71c1c;
+}
+
+.edit-image{
+    width:100px;
+    height:100px;
+}

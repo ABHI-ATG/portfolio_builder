@@ -1,0 +1,40 @@
+.experience {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.experience-list {
+    max-width: 60%;
+    margin: auto;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+    align-items: center;
+}
+
+.job {
+    background: #333;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.headline{
+    display: flex;
+    align-items: center;
+}
+
+.experience-list
+.logo{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
