@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/ExistingProfiles.css";
+import url from '../backend_url'
 
 const ExistingProfiles = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const ExistingProfiles = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/userData/getData", {
+      .get(url+"/api/userData/getData", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       .then((response) => {

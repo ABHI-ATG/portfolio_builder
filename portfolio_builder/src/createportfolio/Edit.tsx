@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import url from '../backend_url'
 
 const Edit = () => {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Edit = () => {
             navigate("/createportfolio/login");
         }
         axios
-            .get("http://localhost:3000/api/verify-token", {
+            .get(url+"/api/verify-token", {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
@@ -43,7 +44,7 @@ const Edit = () => {
         if (!urlName) return;
         setFormData({ ...formData, prev_urlName: urlName });
         axios
-            .post("http://localhost:3000/api/userData/get", { urlName })
+            .post(url+"/api/userData/get", { urlName })
             .then((response) => {
                 setFormData((prevData) => ({
                     ...prevData,
@@ -80,7 +81,7 @@ const Edit = () => {
         e.preventDefault();
         console.log(formData)
         try {
-            await axios.post("http://localhost:3000/api/userData/update", formData, {
+            await axios.post(url+"/api/userData/update", formData, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             });
             setFormData({

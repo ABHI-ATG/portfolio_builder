@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/Message.css";  // Import CSS file
+import "../css/Message.css";  
+import url from '../backend_url'
 
 const Message = () => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Message = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/userMessage/get", {
+            .get(url+"/api/userMessage/get", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             })
             .then((response) => {

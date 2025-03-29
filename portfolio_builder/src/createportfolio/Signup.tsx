@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../css/Auth.css"; // Import CSS
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import url from '../backend_url'
 
 const Signup = () => {
 
@@ -14,7 +15,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/user/register", {
+      const response = await axios.post(url+"/api/user/register", {
         name: name,
         email: email,
         password: password

@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { addData } from "../data/store";
+import url from '../backend_url'
 
 const Portfolio = () => {
     const { string: urlName } = useParams(); 
@@ -20,7 +21,7 @@ const Portfolio = () => {
         if (!urlName) return; 
         console.log("Fetching user data for:", urlName);
         axios
-            .post("http://localhost:3000/api/userData/get", { urlName })
+            .post(url+"/api/userData/get", { urlName })
             .then((response) => {
                 console.log("User data fetched:", response.data);
                 dispatch(addData(response.data));

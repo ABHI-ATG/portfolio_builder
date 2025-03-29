@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Dashboard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import url from '../backend_url'
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Dashboard = () => {
             navigate("/createportfolio/login");
         }
         axios
-            .get("http://localhost:3000/api/verify-token", {
+            .get(url+"/api/verify-token", {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
@@ -65,7 +66,7 @@ const Dashboard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:3000/api/userData/insert", formData, {
+            await axios.post(url+"/api/userData/insert", formData, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             });
             setFormData({

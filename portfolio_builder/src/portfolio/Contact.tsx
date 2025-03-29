@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Contact.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import url from '../backend_url'
 
 const Contact = () => {
     const userEmail=useSelector((state:any)=>state.data.data.email);
@@ -17,7 +18,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/api/userMessage",{...formData,userEmail:userEmail})
+        axios.post(url+"/api/userMessage",{...formData,userEmail:userEmail})
         .then((response)=>{
             alert("Message Sent Successfully!");
             setFormData({ name: "", email: "", message: "" }); 
