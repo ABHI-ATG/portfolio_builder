@@ -3,11 +3,11 @@ import Project from "./Project";
 import Experience from "./Experience";
 import Tech from "./Tech";
 import Contact from "./Contact";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Header from "./Header";
 import Social from './Social'
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { addData } from "../data/store";
 import url from '../backend_url'
@@ -15,7 +15,6 @@ import url from '../backend_url'
 const Portfolio = () => {
     const { string: urlName } = useParams(); 
     const dispatch = useDispatch();
-    const userData = useSelector((state: any) => state.data.data);
 
     useEffect(() => {
         if (!urlName) return; 

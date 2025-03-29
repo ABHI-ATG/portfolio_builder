@@ -13,10 +13,9 @@ const Home = () => {
     }
 
     if (data.resume.startsWith("data:application/pdf;base64,")) {
-      // Convert Base64 to Blob and trigger download
       const base64String = data.resume.split(',')[1];
       const byteCharacters = atob(base64String);
-      const byteNumbers = new Array(byteCharacters.length).fill().map((_, i) => byteCharacters.charCodeAt(i));
+      const byteNumbers = new Array(byteCharacters.length).fill(0).map((_, i) => byteCharacters.charCodeAt(i));
       const byteArray = new Uint8Array(byteNumbers);
       const blob = new Blob([byteArray], { type: "application/pdf" });
 

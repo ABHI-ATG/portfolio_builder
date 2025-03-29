@@ -2,7 +2,7 @@ import Portfolio from './portfolio/Portfolio'
 import CreatePortfolio from './createportfolio/CreatePortfolio'
 import NotFound from './NotFound'
 import './css/App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './data/store';
 

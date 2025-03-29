@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../css/Dashboard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +7,7 @@ import url from '../backend_url'
 const Dashboard = () => {
     const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<any>({
         firstName: "",
         secondName: "",
         about: "",
@@ -28,8 +28,7 @@ const Dashboard = () => {
             .get(url+"/api/verify-token", {
                 headers: { Authorization: `Bearer ${token}` }
             })
-            .then((response) => {
-                //console.log("Token Verified:", response.data);
+            .then(() => {
             })
             .catch((error) => {
                 console.error("Token Invalid:", error.response?.data);
@@ -38,21 +37,21 @@ const Dashboard = () => {
             });
     }, []);
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleArrayChange = (index, field, value, arrayName) => {
+    const handleArrayChange = (index:any, field:any, value:any, arrayName:any) => {
         const updatedArray = [...formData[arrayName]];
         updatedArray[index] = { ...updatedArray[index], [field]: value };
         setFormData({ ...formData, [arrayName]: updatedArray });
     };
 
-    const addArrayItem = (arrayName, defaultItem) => {
+    const addArrayItem = (arrayName:any, defaultItem:any) => {
         setFormData({ ...formData, [arrayName]: [...formData[arrayName], defaultItem] });
     };
 
-    const imageToBase64 = (e) => {
+    const imageToBase64 = (e:any) => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(e.target.files[0]);
@@ -63,7 +62,7 @@ const Dashboard = () => {
     };
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault();
         try {
             await axios.post(url+"/api/userData/insert", formData, {
@@ -107,7 +106,7 @@ const Dashboard = () => {
                 <textarea id="about" name="about" placeholder="About You" value={formData.about} onChange={handleChange} required></textarea>
 
                 <h3>Experience</h3>
-                {formData.experience.map((exp, index) => (
+                {formData.experience.map((exp:any, index:any) => (
                     <div key={index} className="array-item">
                         <label>{index + 1} : Job Title</label>
                         <input type="text" placeholder="Job Title" value={exp.title} onChange={(e) => handleArrayChange(index, "title", e.target.value, "experience")} required />
@@ -133,7 +132,7 @@ const Dashboard = () => {
                 ))}
                 <button type="button" onClick={() => addArrayItem("experience", { title: "", company: "", description: "" })}>Add Experience</button>
                 <h3>Projects</h3>
-                {formData.project.map((project, index) => (
+                {formData.project.map((project:any, index:any) => (
                     <div key={index} className="array-item">
                         <label>{index + 1} : Project Name</label>
                         <input type="text" placeholder="Project Name" value={project.name} onChange={(e) => handleArrayChange(index, "name", e.target.value, "project")} required />
@@ -157,7 +156,7 @@ const Dashboard = () => {
                 <button type="button" onClick={() => addArrayItem("project", { name: "", description: "" })}>Add Project</button>
 
                 <h3>Skills</h3>
-                {formData.techstack.map((tech, index) => (
+                {formData.techstack.map((tech:any, index:any) => (
                     <div key={index} className="array-item">
                         <label>{index + 1} : Technology Name</label>
                         <input type="text" placeholder="Technology Name" value={tech.name} onChange={(e) => handleArrayChange(index, "name", e.target.value, "techstack")} required />
@@ -172,7 +171,7 @@ const Dashboard = () => {
                 <button type="button" onClick={() => addArrayItem("techstack", { name: "" })}>Add Skills</button>
 
                 <h3>Social Links</h3>
-                {formData.social.map((social, index) => (
+                {formData.social.map((social:any, index:any) => (
                     <div key={index} className="array-item">
                         <label>{index + 1} : Platform</label>
                         <input type="text" placeholder="Platform" value={social.name} onChange={(e) => handleArrayChange(index, "name", e.target.value, "social")} required />

@@ -1,16 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../css/Message.css";  
+import "../css/Message.css";
 import url from '../backend_url'
 
 const Message = () => {
-    const navigate = useNavigate();
-    const [data, setData] = useState([]);
+    
+    interface Message {
+        name: string;
+        email: string;
+        message: string;
+    }
+    const [data, setData] = useState<Message[]>([]);
 
     useEffect(() => {
         axios
-            .get(url+"/api/userMessage/get", {
+            .get(url + "/api/userMessage/get", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             })
             .then((response) => {

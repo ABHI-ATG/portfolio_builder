@@ -1,6 +1,4 @@
-import React from "react";
 import "../css/Project.css";
-import project_logo from "../assets/project.avif";
 import { useSelector } from "react-redux";
 
 const Projects = () => {

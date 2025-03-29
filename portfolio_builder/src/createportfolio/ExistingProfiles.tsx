@@ -6,14 +6,27 @@ import url from '../backend_url'
 
 const ExistingProfiles = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState([]);
-
+  interface UserProfile {
+    logo_name: string,
+    firstName: string,
+    secondName: string,
+    about: string,
+    resume: string,
+    project: [],
+    experience: [],
+    techstack: [],
+    social: [],
+    urlName: string,
+    email: string
+  }
+  const [data, setData] = useState<UserProfile[]>([]);
   useEffect(() => {
     axios
-      .get(url+"/api/userData/getData", {
+      .get(url + "/api/userData/getData", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       .then((response) => {
+        console.log(response.data);
         if (Array.isArray(response.data)) {
           setData(response.data.length > 0 ? response.data : []);
         } else {
@@ -26,7 +39,7 @@ const ExistingProfiles = () => {
   }, []);
 
 
-  const handleEdit = (id) => {
+  const handleEdit = (id: any) => {
     navigate(`edit/${id}`);
   };
 
@@ -36,9 +49,9 @@ const ExistingProfiles = () => {
       {data.length === 0 ? (
         <p>No profiles found.</p>
       ) : (
-        data.map((item:any) => (
+        data.map((item: any) => (
           <div key={item._id} className="profile-card">
-            <h3>{item.firstName+" "+item.secondName}</h3>
+            <h3>{item.firstName + " " + item.secondName}</h3>
             <p>{item.about}</p>
             <p><strong>URL:</strong> {item.urlName}</p>
             <button className="edit-btn" onClick={() => handleEdit(item.urlName)}>Edit</button>

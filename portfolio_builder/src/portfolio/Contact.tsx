@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../css/Contact.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -12,14 +12,14 @@ const Contact = () => {
         message: "",
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:any) => {
         e.preventDefault();
         axios.post(url+"/api/userMessage",{...formData,userEmail:userEmail})
-        .then((response)=>{
+        .then(()=>{
             alert("Message Sent Successfully!");
             setFormData({ name: "", email: "", message: "" }); 
         }).catch((error)=>{
