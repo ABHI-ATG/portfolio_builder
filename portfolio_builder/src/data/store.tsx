@@ -1,28 +1,32 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"
-import data_ from "./userData.json"
-
-// Sample large dataset
-
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+import data_ from "./userData.json";
 
 // Create a Redux slice
 const dataSlice = createSlice({
   name: "data",
-  initialState:{
-    data: data_
+  initialState: {
+    data: data_,  
+    message: []  
   },
   reducers: {
     addData: (state, action) => {
-      state.data = { ...action.payload };
+      state.data = action.payload;
     },  
-    logout: (state, action) => {
-      state.data={};
-      localStorage.removeItem("token");
+    addMessage: (state, action) => {
+      state.message.push(action.payload);  
+    }, 
+    logout: (state) => {
+      state.data = {};  
+      state.message = [];  
+      localStorage.removeItem("token"); 
     },
   }
 });
 
-export const { addData,logout } = dataSlice.actions;
+// Export all actions
+export const { addData, addMessage, logout } = dataSlice.actions;
 
+// Create store
 const store = configureStore({
   reducer: {
     data: dataSlice.reducer

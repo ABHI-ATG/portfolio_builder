@@ -1,6 +1,7 @@
 {
     "logo_name":"JD",
-    "name": "John Doe",
+    "firstName": "John",
+    "secondName":"Doe",
     "about":"I am a seasoned full-stack software engineer with over 8 years of professional experience, specializing in backend development. My expertise lies in crafting robust and scalable SaaS-based architectures on the Amazon AWS platform.",
     "resume":"",
     "project": [

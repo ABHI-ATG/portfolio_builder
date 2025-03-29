@@ -1,6 +1,7 @@
 import Login from "./Login"
 import Signup from "./Signup"
 import Dashboard from "./Dashboard"
+import Message from './Message'
 import Edit from './Edit'
 import { Route, Routes, useNavigate } from "react-router-dom"
 import "../css/createPortfolio.css"
@@ -16,22 +17,25 @@ const CreatePortfolio = () => {
         <>
             <div className="create-portfolio">
                 Create Portfolio Website
-                {localStorage.getItem("token")?
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
-                :
-                <></>
+                {localStorage.getItem("token") ?
+                    <button onClick={handleLogout} className="logout-btn">Logout</button>
+                    :
+                    <></>
                 }
             </div>
             <Routes>
                 <Route path="/" element={
                     <>
-                    <ExistingProfiles/>
-                    <Dashboard/>
+                        <div className="create-profiles">
+                            <ExistingProfiles />
+                            <Message />
+                            <Dashboard />
+                        </div>
                     </>
-                }/>
-                <Route path="/edit/:string" element={<Edit/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/register" element={<Signup/>}/>
+                } />
+                <Route path="/edit/:string" element={<Edit />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Signup />} />
             </Routes>
         </>
     )

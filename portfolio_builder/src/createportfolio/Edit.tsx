@@ -41,12 +41,10 @@ const Edit = () => {
 
     useEffect(() => {
         if (!urlName) return;
-        console.log("Fetching user data for:", urlName);
         setFormData({ ...formData, prev_urlName: urlName });
         axios
             .post("http://localhost:3000/api/userData/get", { urlName })
             .then((response) => {
-                console.log("User data fetched:", response.data);
                 setFormData((prevData) => ({
                     ...prevData,
                     ...response.data,

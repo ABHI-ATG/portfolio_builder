@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../css/Contact.css";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const Contact = () => {
+    const userEmail=useSelector((state:any)=>state.data.data.email);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -14,9 +17,14 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert("Message Sent Successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Reset form after submission
+        axios.post("http://localhost:3000/api/userMessage",{...formData,userEmail:userEmail})
+        .then((response)=>{
+            alert("Message Sent Successfully!");
+            setFormData({ name: "", email: "", message: "" }); 
+        }).catch((error)=>{
+            console.log(error);
+        })
+
     };
 
     return (

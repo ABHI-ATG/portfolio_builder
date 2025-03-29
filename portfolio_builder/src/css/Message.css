@@ -1,0 +1,52 @@
+.message-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.no-messages {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+}
+
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-card {
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.message-card:hover {
+    transform: scale(1.02);
+}
+
+.message-card h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.message-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.message-text {
+    font-style: italic;
+    color: #333;
+}
