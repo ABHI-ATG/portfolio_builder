@@ -21,7 +21,6 @@ const Signup = () => {
         password: password
       });
       navigate("/createportfolio/login")
-      console.log("Success:", response.data);
     } catch (error) {
       console.error("Error:", error);
     }

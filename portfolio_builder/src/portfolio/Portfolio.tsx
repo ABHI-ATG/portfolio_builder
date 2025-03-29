@@ -19,11 +19,9 @@ const Portfolio = () => {
 
     useEffect(() => {
         if (!urlName) return; 
-        console.log("Fetching user data for:", urlName);
         axios
             .post(url+"/api/userData/get", { urlName })
             .then((response) => {
-                console.log("User data fetched:", response.data);
                 dispatch(addData(response.data));
             })
             .catch((error) => {

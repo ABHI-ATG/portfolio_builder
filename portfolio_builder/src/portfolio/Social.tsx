@@ -3,7 +3,6 @@ import "../css/Social.css";
 
 const Social = () => {
     const data = useSelector((state: any) => state.data.data.social);
-    console.log(data);
     return (
         <footer className="social-footer">
             <p>

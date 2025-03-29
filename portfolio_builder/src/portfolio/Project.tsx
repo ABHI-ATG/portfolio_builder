@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Projects = () => {
   const data=useSelector((state:any)=>state.data.data.project);
-  console.log(data);
   
   return (
     <section id="pro" className="projects">

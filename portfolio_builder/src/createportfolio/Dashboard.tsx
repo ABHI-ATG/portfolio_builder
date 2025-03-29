@@ -29,7 +29,7 @@ const Dashboard = () => {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
-                console.log("Token Verified:", response.data);
+                //console.log("Token Verified:", response.data);
             })
             .catch((error) => {
                 console.error("Token Invalid:", error.response?.data);

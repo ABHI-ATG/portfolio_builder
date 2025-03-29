@@ -31,7 +31,7 @@ const Edit = () => {
                 headers: { Authorization: `Bearer ${token}` }
             })
             .then((response) => {
-                console.log("Token Verified:", response.data);
+                //console.log("Token Verified:", response.data);
             })
             .catch((error) => {
                 console.error("Token Invalid:", error.response?.data);
@@ -79,7 +79,7 @@ const Edit = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
+        // console.log(formData)
         try {
             await axios.post(url+"/api/userData/update", formData, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }

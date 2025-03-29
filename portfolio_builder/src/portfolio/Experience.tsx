@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 const Experience = () => {
 
   const data=useSelector((state:any)=>state.data.data.experience);
-  console.log(data);
 
   return (
     <section id="exp" className="experience">

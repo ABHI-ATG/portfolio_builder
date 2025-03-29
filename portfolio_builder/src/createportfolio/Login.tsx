@@ -22,7 +22,6 @@ const Login = () => {
       localStorage
       .setItem("token", token);
       navigate("/createportfolio")
-      console.log("Success:", response.data);
     } catch (error) {
       console.error("Error:", error);
     }

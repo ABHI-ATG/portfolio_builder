@@ -37,7 +37,6 @@ const ExistingProfiles = () => {
         <p>No profiles found.</p>
       ) : (
         data.map((item:any) => (
-          console.log(item),
           <div key={item._id} className="profile-card">
             <h3>{item.firstName+" "+item.secondName}</h3>
             <p>{item.about}</p>

@@ -14,7 +14,6 @@ const Message = () => {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             })
             .then((response) => {
-                console.log(response.data);
                 setData(response.data.messages);
             })
             .catch((error) => {
