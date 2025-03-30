@@ -5,9 +5,11 @@
     padding: 40px 20px;
 }
 
+.technologies
 h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: white;
 }
 
 .tech-icons {

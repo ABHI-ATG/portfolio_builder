@@ -5,9 +5,11 @@
     padding: 40px 20px;
 }
 
+.projects
 h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: white;
 }
 
 .project-list {
@@ -27,4 +29,11 @@ h2 {
 
 .project_logo{
     width: 100%;
+}
+
+@media (max-width: 665px) {
+    .project {
+        width: 80%;
+        padding:10px
+    }
 }
