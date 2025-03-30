@@ -1,6 +1,5 @@
 import "../css/Header.css";
 import { useSelector } from "react-redux";
-import menuLogo from '../assets/menu-logo.png'
 
 const Header = () => {
   const data=useSelector((state:any)=>state.data.data.logo_name);
