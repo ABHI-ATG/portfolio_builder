@@ -7,14 +7,16 @@ import { useDispatch } from "react-redux";
 import Header from "./Header";
 import Social from './Social'
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { addData } from "../data/store";
 import url from '../backend_url'
+import Loading from './Loading'
 
 const Portfolio = () => {
     const { string: urlName } = useParams(); 
     const dispatch = useDispatch();
+    const [loading,setLoading]=useState(true);
 
     useEffect(() => {
         if (!urlName) return; 
@@ -22,15 +24,21 @@ const Portfolio = () => {
             .post(url+"/api/userData/get", { urlName })
             .then((response) => {
                 dispatch(addData(response.data));
+                setLoading(false);
             })
             .catch((error) => {
                 console.error("Error fetching user data:", error);
+                setLoading(false);
             });
 
     }, [urlName, dispatch]); 
 
     return (
         <>
+            {loading?
+            <Loading/>
+            :
+            <>
             <Header />
             <Home />
             <Experience />
@@ -38,6 +46,7 @@ const Portfolio = () => {
             <Tech />
             <Contact />
             <Social />
+            </>}
         </>
     )
 }
