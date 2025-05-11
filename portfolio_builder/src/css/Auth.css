@@ -84,6 +84,12 @@
     text-decoration: underline;
 }
 
+.auth-container h5{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #aaa;
+}
+
 
 /* Responsive Design */
 @media (max-width: 480px) {

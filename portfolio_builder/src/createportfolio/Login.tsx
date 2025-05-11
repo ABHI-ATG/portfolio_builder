@@ -10,6 +10,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = async (e:any) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Login = () => {
       .setItem("token", token);
       navigate("/createportfolio")
     } catch (error) {
+      setLoginFailed(true);
       console.error("Error:", error);
     }
   };
@@ -48,6 +50,7 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <h5>{loginFailed?<>Incorrect Credentials</>:<></>}</h5>
       </form>
       <p>Don't have an account? <button className="auth-btn" onClick={()=>{
         navigate('/createportfolio/register')
