@@ -48,7 +48,7 @@ const Home = () => {
           Hey! My name is  <br />
           <span className="gradient-text">{data.firstName + " " + data.secondName}</span>
         </h1>
-        <p>
+        <p className="about">
           {data.about}
         </p>
         <div className="buttons">
